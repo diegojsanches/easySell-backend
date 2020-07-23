@@ -1,5 +1,4 @@
 module.exports = {
-    "name": "default",
     "type": "postgres",
     "url": process.env.DATABASE_URL,
     "entities": [
@@ -9,6 +8,7 @@ module.exports = {
       "./src/shared/infra/typeorm/migrations/*.ts"
     ],
     "cli": {
-      "migrationsDir": "./src/shared/infra/typeorm/migrations"
+      "migrationsDir": "./src/shared/infra/typeorm/migrations",
+      "entitiesDir": "./src/modules/**/infra/typeorm/entities"
     }
   };
