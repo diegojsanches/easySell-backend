@@ -1,6 +1,4 @@
 import { injectable, inject } from 'tsyringe';
-import ICacheProvider from '@shared/container/providers/CacheProvider/models/ICacheProvider';
-import { classToClass } from 'class-transformer';
 import IProductsRepository from '../repositories/IProductsRepository';
 import Product from '../infra/typeorm/entities/Product';
 
