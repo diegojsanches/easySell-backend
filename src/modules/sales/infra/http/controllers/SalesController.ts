@@ -4,15 +4,13 @@ import { container } from 'tsyringe';
 import CreateSaleService from '@modules/sales/services/CreateSaleService';
 import ListSalesService from '@modules/sales/services/ListSalesService';
 import ShowSaleService from '@modules/sales/services/ShowSaleService';
-import { addDays, endOfDay, startOfDay } from 'date-fns';
+import { endOfDay, startOfDay } from 'date-fns';
 
 class SalesController {
   public async index(req: Request, res: Response): Promise<Response> {
     const { fromDate, toDate } = req.query;
     const parsedFromDate = startOfDay(new Date(fromDate as string));
     const parsedToDate = endOfDay(new Date(toDate as string));
-    console.log(parsedFromDate, parsedToDate);
-
     const listSales = container.resolve(ListSalesService);
 
     const sales = await listSales.execute({
