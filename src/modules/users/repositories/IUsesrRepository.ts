@@ -5,6 +5,8 @@ import IFindAllProvidersDTO from '../dtos/IFindAllProvidersDTO';
 export default interface IUsersRepository {
   findAppProviders(data: IFindAllProvidersDTO): Promise<User[]>;
 
+  findAll(id: string): Promise<User[]>;
+
   findById(id: string): Promise<User | undefined>;
 
   findByEmail(email: string): Promise<User | undefined>;
