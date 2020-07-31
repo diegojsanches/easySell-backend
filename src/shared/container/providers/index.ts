@@ -1,5 +1,3 @@
-import './CacheProvider';
-
 import './StorageProviders';
 
 import './MailTemplateProvider';
