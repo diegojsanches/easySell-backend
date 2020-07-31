@@ -9,12 +9,12 @@ module.exports = {
     },
   },
   "entities": [
-    "./dist/modules/**/infra/typeorm/entities/*.js"
+    process.env.DATABASE_ENTITIES
   ],
   "migrations": [
-    "./dist/shared/infra/typeorm/migrations/*.js"
+    process.env.DATABASE_MIGRATIONS
   ],
   "cli": {
-    "migrationsDir": "./dist/shared/infra/typeorm/migrations"
+    "migrationsDir": process.env.DATABASE_MIGRATIONS_DIR
   }
 };
