@@ -9,7 +9,7 @@ module.exports = {
     },
   },
   "entities": [
-    "./diest/modules/**/infra/typeorm/entities/*.js"
+    "./dist/modules/**/infra/typeorm/entities/*.js"
   ],
   "migrations": [
     "./dist/shared/infra/typeorm/migrations/*.js"
