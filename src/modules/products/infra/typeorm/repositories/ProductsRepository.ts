@@ -52,9 +52,13 @@ class ProductsRepository implements IProductsRepository {
   }
 
   public async filterByQuery(q: string): Promise<Product[] | undefined> {
-    const filterProducts = await this.ormRepository.find({
-      where: [{ code: q }, { description: Like(`${q}%`) }],
-    });
+    const filterProducts = await this.ormRepository
+      .createQueryBuilder('products')
+      .where('code = :q OR LOWER(description) LIKE :qLower', {
+        q,
+        qLower: `${q.toLowerCase()}%`,
+      })
+      .getMany();
     return filterProducts;
   }
 
